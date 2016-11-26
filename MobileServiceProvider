@@ -1,0 +1,51 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Nilima M
+ */
+import java.util.Scanner;
+public class MobileServiceProvider {
+    public static void main(String[] args)
+    {
+        double mins;
+        String p;
+        char plan;
+        double charge=0;
+        double minus=0;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter your plan : ");
+        p = input.nextLine();
+        plan=p.charAt(0);
+        System.out.print("Enter the minutes used : ");
+        mins=input.nextDouble();
+        if(plan=='A')
+        {
+            charge=39.99;
+            if(mins>450)
+            {
+                minus=mins-450;
+                charge=charge+(minus*0.45);
+            }
+        }else if(plan=='B')
+        {
+            charge=59.99;
+            if(mins>900)
+            {
+                minus=mins-900;
+                charge=charge+(minus*.40);
+            }
+        }else 
+        {
+            charge=69.99;
+        }
+        System.out.println("total charges :$"+ charge);
+        
+    }
+    
+    
+}
